@@ -16,7 +16,9 @@ pdf_canvas.setTitle("Fotograma")
 x = 50
 y = 400
 for i in range(0, len(images)):
+    image = images[i].rsplit(".", 1)[0]
     add_image(os.path.join(folder_path, images[i]), pdf_canvas, x, y)
+    pdf_canvas.drawString(x, y - 20, image)
     x += 250
     if x >= 700:
         x = 50
